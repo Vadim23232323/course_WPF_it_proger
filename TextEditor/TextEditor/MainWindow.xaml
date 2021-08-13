@@ -1,0 +1,88 @@
+﻿<Window x:Class="TextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEditor"
+        mc:Ignorable="d"
+        Title="Text editor" Height="450" Width="800" ResizeMode="NoResize" 
+        Topmost="False" WindowState="Normal" Icon="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\icon.png">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="menuFile" Header="Файл">
+                <MenuItem x:Name="createNewFile" Header="Создать новый файл" Click="createNewFile_Click">
+                    <MenuItem.Icon>
+                        <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\openFile.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="openNewFile" Header="Открыть новый файл" Click="OpenNewFile_Click">
+                    <MenuItem.Icon>
+                        <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\openFile.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="saveFile" Header="Сохранить файл" Click="SaveFile_Click">
+                    <MenuItem.Icon>
+                        <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\saveFile.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="exitProgram" Header="Выйти" Click="ExitProgram_Click">
+                    <MenuItem.Icon>
+                        <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\exit.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="menuEdit" Header="Редактировать">
+                <MenuItem x:Name="selectFont" Header="Шрифт">
+                    <MenuItem x:Name="timesNewRomanFont" Header="Times New Roman" IsCheckable="True" 
+                              StaysOpenOnClick="True" Click="TimesNewRomanFont_Click">
+                    </MenuItem>
+                    <MenuItem x:Name="verdanaFont" Header="Verdana" IsCheckable="True" 
+                              StaysOpenOnClick="True" Click="VerdanaFont_Click">
+                    </MenuItem>
+                </MenuItem>
+                <Separator />
+                <MenuItem x:Name="copyText" Header="Скопировать" 
+                          Command="ApplicationCommands.Copy"
+                          InputGestureText="Ctrl+C">
+                </MenuItem>
+                <MenuItem x:Name="pasteText" Header="Вставить" 
+                          Command="ApplicationCommands.Paste"
+                          InputGestureText="Ctrl+V">
+                </MenuItem>
+                <MenuItem x:Name="cutText" Header="Вырезать" 
+                          Command="ApplicationCommands.Cut"
+                          InputGestureText="Ctrl+X">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button x:Name="btnsave" ToolTip="Save files" Click="SaveFile_Click">
+                    <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\saveFile.ico" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="btnopen" ToolTip="Open files" Click="OpenNewFile_Click">
+                    <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\openFile.ico" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="btnCut" ToolTip="Cut text" Command="ApplicationCommands.Cut">
+                <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\Cut.ico" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="btnPaste" ToolTip="Paste text" Command="ApplicationCommands.Paste">
+                    <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\Paste.ico" Height="25" Width="25"></Image>
+                </Button>
+                <Label>Size font</Label>
+                <ComboBox x:Name="selectFontSize" SelectionChanged="SelectFontSize_SelectionChanged">
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem IsSelected="true">14</ComboBoxItem>
+                    <ComboBoxItem>16</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                    <ComboBoxItem>24</ComboBoxItem>
+                    <ComboBoxItem>32</ComboBoxItem>
+                    <ComboBoxItem>48</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+
+        <TextBox x:Name="textBox" Width="782" Margin="0,5,0,1" FontSize="14"/>
+    </DockPanel>
+</Window>

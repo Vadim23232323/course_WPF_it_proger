@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExampleApp"
         mc:Ignorable="d"
-        Title="calculator" Height="450" Width="800" 
+        Title="calculator" Height="450" Width="800" ResizeMode="NoResize" 
         Topmost="False" WindowState="Normal" Icon="d:\course_WPF_it_proger\ExampleApp\ExampleApp\Resources\icon.png">
     <Grid>
         <Grid.ColumnDefinitions>
