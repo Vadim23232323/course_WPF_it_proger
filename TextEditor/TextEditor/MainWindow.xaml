@@ -65,7 +65,7 @@
                     <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\openFile.ico" Height="25" Width="25"></Image>
                 </Button>
                 <Button x:Name="btnCut" ToolTip="Cut text" Command="ApplicationCommands.Cut">
-                <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\Cut.ico" Height="25" Width="25"></Image>
+                    <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\Cut.ico" Height="25" Width="25"></Image>
                 </Button>
                 <Button x:Name="btnPaste" ToolTip="Paste text" Command="ApplicationCommands.Paste">
                     <Image Source="d:\course_WPF_it_proger\TextEditor\TextEditor\Resources\Paste.ico" Height="25" Width="25"></Image>
@@ -82,7 +82,24 @@
                 </ComboBox>
             </ToolBar>
         </ToolBarTray>
+        <TabControl Width="800">
+            <TabItem Header="sign_up">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-2,0">
+                    <TextBox x:Name="loginField" ToolTip="Login" Foreground="Black" Width="300" Height="50" Margin="244,105,245,160" FontSize="24" Background="White"/>
+                    <PasswordBox x:Name="passField" ToolTip="Password"  Foreground="Black" Width="300" Background="#FFF7F7F7" Height="50" HorizontalAlignment="Left"  FontSize="24" Margin="249,70,0,0"  />
+                    <Button x:Name="regBtn" Foreground="white" Background="#d24d57" Content="Sign up" HorizontalAlignment="Center" Height="40" Width="140" Margin="0,264,0,20" FontSize="20" FontFamily="Courier New" FontWeight="Bold" Click="regBtn_Click"/>
+                    <Label x:Name="Sign_up" Content="SIGN UP" Foreground="#d24d57" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0" FontSize="40" FontWeight="Bold" FontFamily="Arial" Height="61" Width="177"/>
 
-        <TextBox x:Name="textBox" Width="782" Margin="0,5,0,1" FontSize="14"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Edit" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="textBox" Width="770" Margin="-17,0,0,0" FontSize="14" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
     </DockPanel>
 </Window>

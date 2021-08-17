@@ -14,7 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace TextEditor
 {
@@ -127,5 +128,64 @@ namespace TextEditor
                 }
             }
         }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void regBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            var connectionString = ConfigurationManager.ConnectionStrings["TextEditorBD"].ConnectionString;
+         
+            SqlConnection sql = new SqlConnection(connectionString);
+            try
+            {
+                if (sql.State == System.Data.ConnectionState.Closed)
+                    sql.Open();
+
+                string query = "SELECT COUNT(1) FROM Users Where login=@login AND password=@pass";
+                SqlCommand sqlCom = new SqlCommand(query, sql);
+                sqlCom.CommandType = System.Data.CommandType.Text;
+                sqlCom.Parameters.Add("@login", System.Data.SqlDbType.NChar);
+                sqlCom.Parameters["@login"].Value = loginField.Text;
+                sqlCom.Parameters.Add("@pass", System.Data.SqlDbType.NChar);
+                sqlCom.Parameters["@pass"].Value = passField.Password;
+
+                int countUser = Convert.ToInt32(sqlCom.ExecuteScalar());
+                if (countUser ==0)
+                {
+                    query = "INSERT INTO Users (login, password) VALUES (@login, @pass)";
+                    SqlCommand com = new SqlCommand(query, sql);
+                    com.CommandType = System.Data.CommandType.Text;
+                    com.Parameters.Add("@login", System.Data.SqlDbType.NChar);
+                    com.Parameters["@login"].Value = loginField.Text;
+                    com.Parameters.Add("@pass", System.Data.SqlDbType.NChar);
+                    com.Parameters["@pass"].Value = passField.Password;
+
+                    com.ExecuteNonQuery();
+                    MessageBox.Show("Add Users to BD");
+                } else
+                {
+                    MessageBox.Show("SIGN UP OK");
+
+                    AuthPage authPage = new AuthPage();
+                    authPage.Show();
+
+                    App.Current.MainWindow.Hide();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            } finally
+            {
+                sql.Close();
+            }
+                }
     }
 }

@@ -20,3 +20,13 @@ D:\course_WPF_it_proger\TextEditor\TextEditor\obj\Debug\net5.0-windows\TextEdito
 D:\course_WPF_it_proger\TextEditor\TextEditor\obj\Debug\net5.0-windows\ref\TextEditor.dll
 D:\course_WPF_it_proger\TextEditor\TextEditor\obj\Debug\net5.0-windows\TextEditor.pdb
 D:\course_WPF_it_proger\TextEditor\TextEditor\obj\Debug\net5.0-windows\TextEditor.genruntimeconfig.cache
+D:\course_WPF_it_proger\TextEditor\TextEditor\bin\Debug\net5.0-windows\TextEditor.dll.config
+D:\course_WPF_it_proger\TextEditor\TextEditor\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+D:\course_WPF_it_proger\TextEditor\TextEditor\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+D:\course_WPF_it_proger\TextEditor\TextEditor\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+D:\course_WPF_it_proger\TextEditor\TextEditor\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+D:\course_WPF_it_proger\TextEditor\TextEditor\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\course_WPF_it_proger\TextEditor\TextEditor\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\course_WPF_it_proger\TextEditor\TextEditor\obj\Debug\net5.0-windows\TextEditor.csproj.CopyComplete
+D:\course_WPF_it_proger\TextEditor\TextEditor\obj\Debug\net5.0-windows\AuthPage.g.cs
+D:\course_WPF_it_proger\TextEditor\TextEditor\obj\Debug\net5.0-windows\AuthPage.baml
